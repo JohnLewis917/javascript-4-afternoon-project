@@ -160,7 +160,11 @@ class Machine {
   fixMachine(){
     this.needs_reboot = true
   }
-  reboot(){
+  reboot() {
+    return () => {
+      this.wear_and_tear_count -= 10
+      this.needs_reboot = false 
+    }
     
     
   }
